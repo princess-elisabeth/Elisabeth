@@ -82,19 +82,19 @@ impl SystemParameters {
         (
             // LWE Parameters
             (
-                LweDimension(863),
-                StandardDev::from_standard_dev(2_f64.powf(-20.7494)),
+                LweDimension(754),
+                StandardDev::from_standard_dev(2_f64.powf(-17.87)),
             ),
             // GLWE Parameters
             (
-                GlweDimension(3),
-                PolynomialSize(512),
-                StandardDev::from_standard_dev(2_f64.powf(-38.4997)),
+                GlweDimension(1),
+                PolynomialSize(2048),
+                StandardDev::from_standard_dev(2_f64.powf(-52.)),
             ),
             // Bootstrapping Key
-            (DecompositionBaseLog(19), DecompositionLevelCount(1)),
+            (DecompositionBaseLog(7), DecompositionLevelCount(6)),
             // Keyswitching Key
-            (DecompositionBaseLog(7), DecompositionLevelCount(2)),
+            (DecompositionBaseLog(2), DecompositionLevelCount(8)),
         )
     }
 
