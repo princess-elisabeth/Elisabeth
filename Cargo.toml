@@ -1,0 +1,42 @@
+[package]
+name = "elisabeth"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+concrete-commons = "0.1.0"
+concrete-core = "=0.1.9"
+
+serde = "1.0.130"
+bincode = "1.3.3"
+
+rayon = {version = "1.5.1", optional = true}
+
+[dev-dependencies]
+criterion = {version = "0.3", features = ["html_reports"]}
+pprof = { version = "0.5.0", features = ["flamegraph", "criterion"] }
+crossterm = "0.21.0"
+
+[[test]]
+name = "clear"
+harness = false
+
+[[test]]
+name = "homomorphic"
+harness = false
+
+[[bench]]
+name = "benchmark-elisabeth"
+harness = false
+
+[profile.bench]
+opt-level = 3
+debug = true
+lto = "fat"
+
+[features]
+default = ["multithread"]
+single_key = []
+multithread = ["rayon"]
